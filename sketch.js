@@ -1,4 +1,4 @@
-var wall,bullet,deformation;
+var wall,bullet,hascollided;
 var speed,weight,thickness;
 
 function setup() 
@@ -26,19 +26,19 @@ function draw()
   
   bullet.velocityX=speed;
 
-  var deformation=0.5*weight*speed*speed/22509;
+  var hascollided=0.5*weight*speed*speed/22509;
   
-  if(deformation>180)
+  if(hascollided>180)
   {
   wall.shapeColor=color(255,0,0);
   }
   
-  if(deformation<180&&deformation>100)
+  if(hascollided<180&&hascollided>100)
   {
   wall.shapeColor=color(230,230,0);
   }
   
-  if(deformation<100)
+  if(hascollided<100)
   {
   wall.shapeColor=color(0,255,0);
   }
